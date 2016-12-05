@@ -1,0 +1,1028 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Spike shoes Website Template | Home</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<!----webfonts---->
+		
+		<!----//webfonts---->
+		<!----start-alert-scroller---->
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easy-ticker.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#demo').hide();
+			$('.vticker').easyTicker();
+		});
+		</script>
+		<!----start-alert-scroller---->
+		<!-- start menu -->
+		<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+		<script type="text/javascript" src="js/megamenu.js"></script>
+		<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+		<script src="js/menu_jquery.js"></script>
+		<!-- //End menu -->
+		<!---slider---->
+		<link rel="stylesheet" href="css/slippry.css">
+		<script src="js/jquery-ui.js" type="text/javascript"></script>
+		<script src="js/scripts-f0e4e0c2.js" type="text/javascript"></script>
+		<script>
+			  jQuery('#jquery-demo').slippry({
+			  // general elements & wrapper
+			  slippryWrapper: '<div class="sy-box jquery-demo" />', // wrapper to wrap everything, including pager
+			  // options
+			  adaptiveHeight: false, // height of the sliders adapts to current slide
+			  useCSS: false, // true, false -> fallback to js if no browser support
+			  autoHover: false,
+			  transition: 'fade'
+			});
+		</script>
+		<!----start-pricerage-seletion---->
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+		<!--- start-rate---->
+		<script src="js/jstarbox.js"></script>
+		<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+			<script type="text/javascript">
+								jQuery(function() {
+									jQuery('.starbox').each(function() {
+										var starbox = jQuery(this);
+										starbox.starbox({
+											average: starbox.attr('data-start-value'),
+											changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+											ghosting: starbox.hasClass('ghosting'),
+											autoUpdateAverage: starbox.hasClass('autoupdate'),
+											buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+											stars: starbox.attr('data-star-count') || 5
+										}).bind('starbox-value-changed', function(event, value) {
+											if(starbox.hasClass('random')) {
+												var val = Math.random();
+												starbox.next().text(' '+val);
+												return val;
+											} 
+										})
+									});
+								});
+			</script>
+		<!---//End-rate---->
+		<script type='text/javascript'>//<![CDATA[ 
+			$(window).load(function(){
+			 $( "#slider-range" ).slider({
+			            range: true,
+			            min: 0,
+			            max: 500,
+			            values: [ 100, 400 ],
+			            slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+			            }
+			 });
+			$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+			
+			});//]]>  
+		</script>
+		<!----//End-pricerage-seletion---->
+		<!---move-top-top---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+				$("#hide_index").click(function(){
+					$("#top-header").hide();
+					$("#header-bottom").hide();
+					//$("#img-slider").hide();
+					$("#price-rage").hide();
+					$("#content").hide();
+					$("#seller_add_product").show();
+				});
+				$("#show_register").click(function(){
+					$("#seller_add_product").hide();
+					$("#top-header").show();
+					$("#header-bottom").show();
+					//$("#img-slider").show();
+					$("#price-rage").show();
+					$("#content").show();
+				});
+				
+			});
+			function hideProducts(){
+					$("#top-header").hide();
+					$("#header-bottom").hide();
+					$("#img-slider").hide();
+					$("#price-rage").hide();
+					$("#content").hide();
+			}
+		</script>
+		<!---//move-top-top---->
+	</head>
+	<body onload="hideProducts()">
+		<!---start-wrap---->
+			<!---start-header---->
+			<header>
+				<div id="top-header" class="top-header">
+					<div class="wrap">
+						<div class="top-header-left">
+							<ul>
+								<!---cart-tonggle-script---->
+								<script type="text/javascript">
+									$(function(){
+									    var $cart = $('#cart');
+									        $('#clickme').click(function(e) {
+									         e.stopPropagation();
+									       if ($cart.is(":hidden")) {
+									           $cart.slideDown("slow");
+									       } else {
+									           $cart.slideUp("slow");
+									       }
+									    });
+									    $(document.body).click(function () {
+									       if ($cart.not(":hidden")) {
+									           $cart.slideUp("slow");
+									       } 
+									    });
+									    });
+								</script>
+								<!---//cart-tonggle-script---->
+								<li><a class="cart" href="#"><span id="clickme"> </span></a></li>
+								<!---start-cart-bag---->
+								<div id="cart">Your Cart is Empty <span>(0)</span></div>
+								<!---start-cart-bag---->
+								<li><a class="info" href="#"><span> </span></a></li>
+							</ul>
+						</div>
+						<div class="top-header-center">
+							<div class="top-header-center-alert-left">
+								<h3>FREE DELIVERY</h3>
+							</div>
+							<div class="top-header-center-alert-right">
+								<div class="vticker">
+								  <ul>
+									  <li>Applies to orders of $50 or more. <label>Returns are always free.</label></li>
+								  </ul>
+								</div>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="top-header-right">
+							<ul>
+								<li><a href="" id="hide_index">Login</a><span> </span></li>
+								<li><a href="register.html">Join</a></li>
+							</ul>
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				
+                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="ÍøÕ¾Ä£°å">ÍøÕ¾Ä£°å</a></div>
+				<!----start-bottom-header---->
+				<div id="header-bottom" class="header-bottom">
+					<div class="wrap">
+					<!-- start header menu -->
+							<ul class="megamenu skyblue">
+								<li class="grid"><a class="color2" href="#">MEN</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>popular</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">login</a></li>
+													</ul>	
+												</div>
+												<div class="h_nav">
+													<h4 class="top">man</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="#">accessories</a></li>
+														<li><a href="#">kids</a></li>
+														<li><a href="#">style videos</a></li>
+													</ul>	
+												</div>
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>style zone</h4>
+													<ul>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>style zone</h4>
+													<ul>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1 men">
+												<div class="men-pic">
+													<img src="images/men.png" title="" />
+												</div>
+											</div>
+										</div>
+									</div>
+									</li>
+					  			<li class="active grid"><a class="color4" href="#">women</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>shop</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>	
+												<div class="h_nav">
+													<h4>help</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>my company</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>												
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>account</h4>
+													<ul>
+														<li><a href="products.html">login</a></li>
+														<li><a href="products.html">create an account</a></li>
+														<li><a href="products.html">create wishlist</a></li>
+														<li><a href="products.html">my shopping bag</a></li>
+														<li><a href="products.html">brands</a></li>
+														<li><a href="products.html">create wishlist</a></li>
+													</ul>	
+												</div>						
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>my company</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>popular</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>
+											</div>
+											<div class="col1 women">
+												<div class="women-pic">
+													<img src="images/women.png" title="" />
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col2"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+										</div>
+					    				</div>
+									</li>				
+									<li><a class="color5" href="#">KIDS</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>popular</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">login</a></li>
+													</ul>	
+												</div>
+												<div class="h_nav">
+													<h4 class="top">man</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>style zone</h4>
+													<ul>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1 kids">
+												<div class="kids-pic">
+													<img src="images/kids1.png" title="" />
+												</div>
+											</div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+										</div>
+									</div>
+									</li>
+									<li><a class="color6" href="#">SPORTS</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>shop</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>	
+												<div class="h_nav">
+													<h4 class="top">my company</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>												
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>man</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>						
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>help</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1 sports">
+												<div class="sports-pic">
+													<img src="images/sport.png" title="" />
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col2"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+										</div>
+									</div>
+									</li>
+									<li><a class="color7" href="#">NIKE SPORTSWEAR</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>shop</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>		
+												<div class="h_nav">
+													<h4>my company</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>					
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>help</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>my company</h4>
+													<ul>
+														<li><a href="products.html">trends</a></li>
+														<li><a href="products.html">sale</a></li>
+														<li><a href="products.html">style videos</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>												
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>account</h4>
+													<ul>
+														<li><a href="products.html">login</a></li>
+														<li><a href="products.html">create an account</a></li>
+														<li><a href="products.html">create wishlist</a></li>
+														<li><a href="products.html">my shopping bag</a></li>
+														<li><a href="products.html">brands</a></li>
+														<li><a href="products.html">create wishlist</a></li>
+													</ul>	
+												</div>						
+											</div>
+											<div class="col1 nike">
+												<div class="nike-pic">
+													<img src="images/nike.png" title="" />
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col2"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+										</div>
+					    				</div>
+									</li>
+									<li><a class="color8" href="#">NIKEiD</a>
+									<div class="megapanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<h4>style zone</h4>
+													<ul>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">women</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">brands</a></li>
+													</ul>	
+												</div>							
+											</div>
+											<div class="col1">
+												<div class="h_nav">
+													<h4>popular</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">men</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">login</a></li>
+													</ul>	
+												</div>
+												<div class="h_nav">
+													<h4 class="top">man</h4>
+													<ul>
+														<li><a href="products.html">new arrivals</a></li>
+														<li><a href="products.html">accessories</a></li>
+														<li><a href="products.html">kids</a></li>
+														<li><a href="products.html">style videos</a></li>
+													</ul>	
+												</div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+											<div class="col1"></div>
+										</div>
+									</div>
+									</div>
+									</li>
+							</ul>
+
+					</div>
+				</div>
+				</header>
+				<!----//End-bottom-header---->
+			<!---//End-header---->
+		<!----start-image-slider---->
+		<div id="img-slider" class="img-slider">
+			<div class="wrap">
+			<ul id="jquery-demo">
+			  <li>
+			    <a href="#slide1">
+			      <img src="images/slide-1.jpg" alt="" />
+			    </a>
+			    <div class="slider-detils">
+			    	<h3>MENS FOOT BALL <label>BOOTS</label></h3>
+			    	<span>Stay true to your team all day, every day, game day.</span>
+			    	<a class="slide-btn" href="details.html"> Shop Now</a>
+			    </div>
+			  </li>
+			  <li>
+			    <a href="#slide2">
+			      <img src="images/slide-4.jpg"  alt="" />
+			    </a>
+			     <div class="slider-detils">
+			    	<h3>MENS FOOT BALL <label>BOOTS</label></h3>
+			    	<span>Stay true to your team all day, every day, game day.</span>
+			    	<a class="slide-btn" href="details.html"> Shop Now</a>
+			    </div>
+			  </li>
+			  <li>
+			    <a href="#slide3">
+			      <img src="images/slide-1.jpg" alt="" />
+			    </a>
+			     <div class="slider-detils">
+			    	<h3>MENS FOOT BALL <label>BOOTS</label></h3>
+			    	<span>Stay true to your team all day, every day, game day.</span>
+			    	<a class="slide-btn" href="details.html"> Shop Now</a>
+			    </div>
+			  </li>
+			</ul>
+			</div>
+		</div>
+		<div class="clear"> </div>
+		<!----//End-image-slider---->
+		<!----start-price-rage---->
+		<div id="price-rage" class="wrap">
+			<div class="price-rage">
+				<h3>Weekly selection:</h3>
+				<div id="slider-range">
+				</div>
+			</div>
+		</div>
+		<!----//End-price-rage--->
+		<!--- start-content---->
+		<div id="content" class="content">
+			<div class="wrap">
+				<div>
+					<div id="product-list" class="product-grids">
+						
+							<!---caption-script---->
+							<!---//caption-script---->
+						<div onClick="location.href='details.html';" class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product2.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 380</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div onClick="location.href='details.html';"  class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product1.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 375</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div onClick="location.href='details.html';"  class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product3.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 350</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div onClick="location.href='details.html';"  class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product4.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 370</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div onClick="location.href='details.html';"  class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product5.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 355</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div onClick="location.href='details.html';"  class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product6.jpg" title="product-name" /></a>
+								<p>
+								<a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html">&#163; 390</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						<div class="product-grid fade">
+							<div class="product-grid-head">
+								<ul class="grid-social">
+									<li><a class="facebook" href="#"><span> </span></a></li>
+									<li><a class="twitter" href="#"><span> </span></a></li>
+									<li><a class="googlep" href="#"><span> </span></a></li>
+									<div class="clear"> </div>
+								</ul>
+								<div class="block">
+									<div class="starbox small ghosting"> </div> <span> (46)</span>
+								</div>
+							</div>
+							<div class="product-pic">
+								<a href="#"><img src="images/product6.jpg" title="product-name" /></a>
+								<p>
+								<a href="#" ><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
+								<span>Men's Firm-Ground Football Boot</span>
+								</p>
+							</div>
+							<div class="product-info">
+								<div class="product-info-cust">
+									<a href="details.html">Details</a>
+								</div>
+								<div class="product-info-price">
+									<a href="details.html" >&#163; 390</a>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="more-product-info">
+								<span> </span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		
+		<!--- //End-content---->
+
+		<!--- start-register---->
+		<div id="seller_add_product" class="content login-box">
+			<div class="login-main">
+				<div class="wrap">
+					<h1>CREATE AN PRODUCT ITEM</h1>
+					<div class="register-grids">
+						<form> 
+								<div class="register-top-grid">
+										<h3>RPODUCT ITEM INFORMATION</h3>
+										
+											<span>Main title<label>*</label></span>
+											<input type="text" id="item_main_title"> 
+											<br />
+											<span>Sub title<label>*</label></span>
+											<input type="text" id="item_sub_title">
+											<br />
+											<span>Price<label>*</label></span>
+											<input type="text" id="item_price"> 
+											<br />
+											<span>Detail Info<label>*</label></span>
+											<textarea id="item_detail_info" 
+															 style="border: 1px solid #EEE;
+															 outline-color: #E45D5D;
+															 width: 96%;
+															 font-size: 1em;
+															 padding: 0.5em;
+															 height: 80px;">
+											</textarea>
+											<span>Choose Picture<label>*</label></span>
+											<input id="upload_image" type="file" name="image" accept="image/*"/>
+											<br />
+											<div style="width: 120px;" id="show_picture"></div>
+											<input id="show_register" style="float: right;margin-right: 30px" class="btn" value="Init" />
+											<input id="show_index"  style="float:right; margin-right: 30px" value="submit" class="btn" />
+											<script type="text/javascript">
+												$(function() {
+													var imageURL;
+
+												$('#upload_image').change(function(event) {
+													
+													var files = event.target.files, file;		
+													if (files && files.length > 0) {
+														
+														file = files[0];
+														
+														console.log(file);
+														
+														if(file.size > 1024 * 1024 * 2) {
+															alert('Size should be less than 2MB!');
+															return false;
+														}
+														
+														var URL = window.URL || window.webkitURL;
+														var imgURL = URL.createObjectURL(file);
+														imageURL = imgURL;
+														$('#show_picture').append($('<img/>').attr('src', imgURL));
+														
+													}
+												});
+														
+													$("#show_index").click(function(){
+														/*check input first!!!*/
+														if(item_main_title.value.length < 2){
+															alert("MAIN TITLE must be at least 2 characters long!!!");
+															return;
+														}
+														if(item_sub_title.value.length < 2){
+															alert("SUB TITLE must be at least 2 characters long!!!");
+															return;
+														}
+														if(isNaN(item_price.value) || 
+															item_price.value.length < 1){
+															alert("PRICE must be number!!!");
+															return;
+														}
+														if(item_detail_info.value == 0){
+															alert("DETAIL INFO connot be empty!!!");
+															return;
+														}
+														var mainTitle = $("#item_main_title").val();
+														var subTitle = $("#item_sub_title").val();
+														var price = $("#item_price").val();
+														var details = $("#item_detail_info").val();
+														$("#seller_add_product").hide();
+														$("#top-header").show();
+														$("#header-bottom").show()
+														//$("#img-slider").show();
+														$("#price-rage").show();
+														$("#content").show();
+															$('#product-list').append("<div class='product-grid fade'><div class='product-grid-head'><ul class='grid-social'><li><a class='facebook'><span> </span></a></li><li><a class='twitter'><span> </span></a></li><li><a class='googlep'><span> </span></a></li><div class='clear'> </div></ul><div class='block'><div class='starbox small ghosting'> </div> <span> (46)</span></div></div><div class='product-pic'><a><img src='"+ imageURL + "' title='product-name' style='width:240px;height:150px'/></a><p><a><small>"+ mainTitle +"</small></a><span>" + subTitle + "</span></p></div><div class='product-info'><div class='product-info-cust'><a>Details</a></div><div class='product-info-price'><a>&#163; " + price + "</a></div><div class='clear'> </div></div><div class='more-product-info'><span> </span></div></div>");
+														jQuery('.starbox').each(function() {
+															var starbox = jQuery(this);
+															starbox.starbox({
+											average: starbox.attr('data-start-value'),
+											changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+											ghosting: starbox.hasClass('ghosting'),
+											autoUpdateAverage: starbox.hasClass('autoupdate'),
+											buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+											stars: starbox.attr('data-star-count') || 5
+															}).bind('starbox-value-changed', function(event, value) {
+															if(starbox.hasClass('random')) {
+															var val = Math.random();
+															starbox.next().text(' '+val);
+															return val;
+											} 
+										})
+									});	
+														});	
+
+													/*
+													$(document).ready(function(){
+														$("#seniorSearch").click(function(){
+														    $("#moreConditions").slideToggle("1000");
+														});
+														}); 
+														*/
+											});
+													
+											</script>
+								</div>
+								
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--- //end-register---->
+
+		<!---start-footer---->
+		<footer class="footer" >
+				<div class="footer-left">
+					<ul>
+						<li><a href="#">United Kingdom</a> <span> </span></li>
+						<li><a href="#">Terms of Use</a> <span> </span></li>
+						<li><a href="#">Nike Inc.</a> <span> </span></li>
+						<li><a href="#">Launch Calendar</a> <span> </span></li>
+						<li><a href="#">Privacy & Cookie Policy</a> <span> </span></li>
+						<li><a href="#">Cookie Settings</a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				
+				<div class="clear"> </div>
+		</footer>
+		<!---//End-footer---->
+		<!---//End-wrap---->
+	</body>
+</html>
+
