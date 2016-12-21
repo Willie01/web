@@ -73,7 +73,7 @@ router.post('/test2', upload.any(), function(req, res, next) {
     var imageName = req.files[0].originalname;
 
     var imagepath = {};
-    imagepath['path'] = path;
+    imagepath['path'] = path.replace("public\\","");
     imagepath['originalname'] = imageName;
 
     //imagepath contains two objects, path and the imageName

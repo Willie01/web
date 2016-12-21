@@ -6,7 +6,7 @@ angular.module('homeCtrl', [])
     .controller('HomeController', function($scope) {
         $scope.products = [
             {
-                path : "public\\uploadImages\\IMG_2188.JPG",
+                path : "uploadImages\\pc.jpg",
                 originalname : "IMG_2188.JPG",
                 __v : 0,
                 ptype : "men",
@@ -15,7 +15,7 @@ angular.module('homeCtrl', [])
                 currentprice : 70,
                 pid : "men_1"}
             , {
-                path : "public\\uploadImages\\IMG_2188.JPG",
+                path : "uploadImages\\pc.jpg",
                 originalname : "IMG_2188.JPG",
                 __v : 0,
                 ptype : "men",
@@ -24,7 +24,7 @@ angular.module('homeCtrl', [])
                 currentprice : 70,
                 pid : "men_1"}
             , {
-                path : "public\\uploadImages\\IMG_2188.JPG",
+                path : "uploadImages\\pc.jpg",
                 originalname : "IMG_2188.JPG",
                 __v : 0,
                 ptype : "men",
@@ -33,7 +33,7 @@ angular.module('homeCtrl', [])
                 currentprice : 70,
                 pid : "men_1"}
             , {
-                path : "public\\uploadImages\\IMG_2188.JPG",
+                path : "uploadImages\\pc.jpg",
                 originalname : "IMG_2188.JPG",
                 __v : 0,
                 ptype : "men",

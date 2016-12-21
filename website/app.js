@@ -13,17 +13,9 @@ var routes = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
 var imagetest = require('./app_server/routes/imagefile');
 
-// var router = express.Router();
-
 var app = express();
 
-// app.use('/', router);
-//
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//     console.log("test");
-//     res.render('../test', { title: 'Express' });
-// });
+app.use('/', routes);
 
 global.dbHandel = require('./database/dbHandel');
 mongoose.connect('mongodb://localhost/accounts');
@@ -74,7 +66,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', imagetest);  // 即为为路径 / 设置路由
 // app.use('/test', imagetest);  // 即为为路径 /images 设置路由
-app.use('/', routes);  // 即为为路径 / 设置路由
 app.use('/users', users); // 即为为路径 /users 设置路由
 app.use('/login',routes); // 即为为路径 /login 设置路由
 // app.use('/register',routes); // 即为为路径 /register 设置路由
@@ -87,6 +78,7 @@ app.use('/login',routes); // 即为为路径 /login 设置路由
 //     err.status = 404;
 //     next(err);
 // });
+
 
 // error handlers
 

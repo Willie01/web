@@ -274,9 +274,9 @@
 					<div  ng-repeat="product in products" class="col-md-3 item-grid simpleCart_shelfItem">
 						<div class=" mid-pop" >
 							<div class="pro-img">
-								<img src="../images/pc7.jpg" class="img-responsive" alt="">
+								<img src="{{product.path}}" class="img-responsive" alt="">
 								<div class="zoom-icon ">
-									<a class="picture" href="../images/pc7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+									<a class="picture" href="{{product.path}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
 									<a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 								</div>
 							</div>
