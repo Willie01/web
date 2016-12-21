@@ -72,9 +72,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', imagetest);  // 即为为路径 / 设置路由
-app.use('/test', imagetest);  // 即为为路径 /images 设置路由
-// app.use('/', routes);  // 即为为路径 / 设置路由
+// app.use('/', imagetest);  // 即为为路径 / 设置路由
+// app.use('/test', imagetest);  // 即为为路径 /images 设置路由
+app.use('/', routes);  // 即为为路径 / 设置路由
 app.use('/users', users); // 即为为路径 /users 设置路由
 app.use('/login',routes); // 即为为路径 /login 设置路由
 // app.use('/register',routes); // 即为为路径 /register 设置路由
