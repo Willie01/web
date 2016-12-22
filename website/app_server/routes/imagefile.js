@@ -5,34 +5,34 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 var mongoose = require('mongoose');
+global.dbHandel = require('../../database/dbHandel');
+var Image= global.dbHandel.getModel('product');
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/uploadImages/')
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({
+    storage: storage
+});
+
 /* GET home page. */
-router.get('/test', function(req, res, next) {
-    console.log("test2");
+router.get('/', function(req, res, next) {
+    console.log("test");
+
     res.render('../test', { title: 'Express' });
 });
-//path and originalname are the fields stored in mongoDB
-var imageSchema = mongoose.Schema({
-    path: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    originalname: {
-        type: String,
-        required: true
-    }
 
+router.get('/test2', function(req, res, next) {
+    console.log("test2");
 });
-
-
-var Image = module.exports = mongoose.model('products', imageSchema);
-
-
 router.getImages = function(callback, limit) {
 
     Image.find(callback).limit(limit);
 }
-
 
 router.getImageById = function(id, callback) {
 
@@ -43,21 +43,26 @@ router.getImageById = function(id, callback) {
 router.addImage = function(image, callback) {
     Image.create(image, callback);
 }
-
+//path and originalname are the fields stored in mongoDB
+// var imageSchema = mongoose.Schema({
+//     path: {
+//         type: String,
+//         required: true,
+//         trim: true
+//     },
+//     originalname: {
+//         type: String,
+//         required: true
+//     }
+// });
+// var Image = module.exports = mongoose.model('products', imageSchema);
 
 // To get more info about 'multer'.. you can go through https://www.npmjs.com/package/multer..
-var storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, 'public/uploadImages/')
-    },
-    filename: function(req, file, cb) {
-        cb(null, file.originalname);
-    }
-});
 
-var upload = multer({
-    storage: storage
-});
+
+
+
+
 
 
 
