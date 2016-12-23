@@ -68,7 +68,6 @@ router.addImage = function(image, callback) {
 
 
 router.post('/test2', upload.any(), function(req, res, next) {
-
     res.send(req.files);
 
     /*req.files has the information regarding the file you are uploading...

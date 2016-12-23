@@ -1,11 +1,41 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
-var mongoose = require('mongoose');
-
+global.dbHandel = require('../../database/dbHandel');
+var Product= global.dbHandel.getModel('product');
 router.get('/', function(req, res, next) {
     console.log("test");
     res.render('../index', { title: 'Express' });
+});
+router.get('/getproducts', function(req, res) {
+
+    console.log("get products");
+    Product.find({},function(err,products){
+        if(err) throw err;
+        res.json(products);
+    });
+    // Product.find('', function(err, products) { // Query in MongoDB via Mongo JS Module
+    //     console.log("get in");
+    //     if( err || !products) console.log("No users found");
+    //     else
+    //     {
+    //         res.writeHead(200, {'Content-Type': 'application/json'}); // Sending data via json
+    //         str='[';
+    //         products.forEach( function(product) {
+    //             str = str + '{ "path" : "' + product.path + '",'
+    //                 +'"ptype":"' + product.ptype + '",'
+    //                 +'"pname":"' + product.pname + '",'
+    //                 +'"initprice":"' + product.initprice + '",'
+    //                 +'"currentprice":"' + product.currentprice+'"'+
+    //                 '},' +'\n';
+    //         });
+    //         str = str.trim();
+    //         str = str.substring(0,str.length-1);
+    //         str = str + ']';
+    //         res.end(str);
+    //         // Prepared the jSon Array here
+    //     }
+    // });
 });
 /* GET login page. */
 router.route("/login").get(function(req,res){    // 到达此路径则渲染login文件，并传出title值供 login.html使用

@@ -15,8 +15,8 @@ var imagetest = require('./app_server/routes/imagefile');
 
 var app = express();
 
-// app.use('/', routes);
-app.use('/', imagetest);  // 即为为路径 / 设置路由
+app.use('/', routes);
+// app.use('/', imagetest);  // 即为为路径 / 设置路由
 global.dbHandel = require('./database/dbHandel');
 mongoose.connect('mongodb://localhost/accounts');
 var db = mongoose.connection;
@@ -135,6 +135,19 @@ app.get('/images/:id', function(req, res) {
         res.send(genres.path)
     });
 });
+
+// app.directive('onFinishRenderFilters', function ($timeout) {
+//     return {
+//         restrict: 'A',
+//         link: function(scope, element, attr) {
+//             if (scope.$last === true) {
+//                 $timeout(function() {
+//                     scope.$emit('ngRepeatFinished');
+//                 });
+//             }
+//         }
+//     };
+// });
 //////////   !Test   //////////
 module.exports = app;
 

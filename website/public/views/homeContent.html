@@ -271,12 +271,12 @@
 					<div class="clearfix"></div>
 				</div>
 				<div ng-controller="HomeController" class="mid-popular">
-					<div  ng-repeat="product in products" class="col-md-3 item-grid simpleCart_shelfItem">
+					<div  ng-repeat="product in products" class="col-md-3 item-grid simpleCart_shelfItem" on-finish-render-filters>
 						<div class=" mid-pop" >
 							<div class="pro-img">
-								<img src="{{product.path}}" class="img-responsive" alt="">
+								<img ng-src="../{{product.path}}" class="img-responsive" alt="">
 								<div class="zoom-icon ">
-									<a class="picture" href="{{product.path}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+									<a class="picture" href="../{{product.path}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
 									<a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 								</div>
 							</div>
@@ -334,4 +334,3 @@
 		</div>
 	<!--//content-->
 	</div>
-	
