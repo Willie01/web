@@ -1,19 +1,63 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
-global.dbHandel = require('../../database/dbHandel');
+global.dbHandel = require('../../database/dbHandel.js');
 var Product= global.dbHandel.getModel('product');
-router.get('/', function(req, res, next) {
-    console.log("test");
-    res.render('../index', { title: 'Express' });
+
+// router.get('/index', function(req, res, next) {
+//     // console.log("sss:"+req.session.uname);
+//     res.render('../index',{user:"frice"});
+// });
+router.route("/").get(function(req,res){    // 到达此路径则渲染register文件，并传出title值供 register.html使用
+    res.render("../index",{user:'Login here!'});
+});
+router.route("/index").get(function(req,res){    // 到达此路径则渲染register文件，并传出title值供 register.html使用
+    res.render("../index",{user:'frice'});
+});
+router.get('/indexAdmin', function(req, res, next) {
+    console.log("enter indexAdmin");
+    res.render('../indexAdmin',{user:"admin"});
 });
 router.get('/getproducts', function(req, res) {
 
     console.log("get products");
-    Product.find({},function(err,products){
+        Product.find({},function(err,men){
         if(err) throw err;
-        res.json(products);
+        res.json(men);
     });
+});
+router.get('/getproducts_men', function(req, res) {
+
+    console.log("get menproducts");
+    Product.find({"ptype":"men"},function(err,mproduct){
+        if(err) throw err;
+        res.json(mproduct);
+    });
+});
+router.get('/getproducts_women', function(req, res) {
+
+    console.log("get womenproducts");
+    Product.find({"ptype":"women"},function(err,wproduct){
+        if(err) throw err;
+        res.json(wproduct);
+    });
+});
+router.get('/getproducts_sale', function(req, res) {
+
+    console.log("get products");
+    Product.find({"ptype":"sale"},function(err,mProjects){
+        if(err) throw err;
+        res.json(mProjects);
+    });
+});
+router.get('/getproductinfo', function(req, res, next) {
+     console.log("productinfo");
+    });
+
+ router.get('/contact', function(req, res, next) {
+        console.log("contact");
+    });
+
     // Product.find('', function(err, products) { // Query in MongoDB via Mongo JS Module
     //     console.log("get in");
     //     if( err || !products) console.log("No users found");
@@ -36,46 +80,8 @@ router.get('/getproducts', function(req, res) {
     //         // Prepared the jSon Array here
     //     }
     // });
-});
-/* GET login page. */
-router.route("/login").get(function(req,res){    // 到达此路径则渲染login文件，并传出title值供 login.html使用
-    res.render("../login",{title:'User Login'});
-}).post(function(req,res){                        // 从此路径检测到post方式则进行post数据的处理操作
-    //get User info
-    //这里的User就是从model中获取user对象，通过global.dbHandel全局方法（这个方法在app.js中已经实现)
-    var User = global.dbHandel.getModel('user');
-    var uname = req.body.uname;                //获取post上来的 data数据中 uname的值
-    var password = req.body.password;
-    var data;
-    console.log("uname: " + uname);
-    console.log("password: " + password);
-    User.findOne({uname:uname},function(err,doc){   //通过此model以用户名的条件 查询数据库中的匹配信息
-        if(err){                                         //错误就返回给原post处（login.html) 状态码为500的错误
-            res.send(500);
-            console.log(err);
-        }else if(!doc){                                 //查询不到用户名匹配信息，则用户名不存在
-            req.session.error = '用户名不存在';
-            res.send(404);                            //    状态码返回404
-            console.log("doc:"+doc.uname);
-            res.redirect("/login");
-        }else{
-            if(req.body.password != doc.password){     //查询到匹配用户名的信息，但相应的password属性不匹配
-                req.session.error = "密码错误";
-                res.send(404);
-                console.log("doc:"+doc.password);
-                res.redirect("/login");
-            }else{                                     //信息匹配成功，则将此对象（匹配到的user) 赋给session.user  并返回成功
-                req.session.user = doc;
-                data ={
-                    utype:doc.utype
-                };
-                res.send(200,data);
-                console.log("utype:"+ data);
-              //  res.redirect("/home");
-            }
-        }
-    });
-});
+
+
 /* GET register page. */
 router.route("/register").get(function(req,res){    // 到达此路径则渲染register文件，并传出title值供 register.html使用
     res.render("register",{title:'User register'});
