@@ -24,9 +24,9 @@
 			vache                 : true,					
 			separator1            : ' | ',						
 			separator2            : '/',						
-			leftImg               : 'images/left.gif',	
-			rightImg              : 'images/right.gif',	
-			closeImg              : 'images/close.gif',		
+			leftImg               : 'images/left.png',
+			rightImg              : 'images/right.png',
+			closeImg              : 'images/close.png',
 			loadingImg            : 'images/loading.gif',		
 			currentImage          : 0,						
 			setIndex              : 0,
@@ -87,7 +87,7 @@
 		function _interface(){
 			//html
 			clear();
-			settings.container.append('<div id="Choco_overlay"></div><div id="Choco_content"><div id="Choco_close"></div><div id="Choco_loading"></div><div id="Choco_container_photo"><img id="Choco_bigImage" src="" /></div><div id="Choco_container_description"><span id="Choco_container_title"></span><span id="Choco_container_via"></span></div><div id="Choco_left_arrow" class="Choco_arrows"></div><div id="Choco_right_arrow" class="Choco_arrows"></div></div>');	
+			settings.container.append('<div id="Choco_overlay"></div><div id="Choco_content"><div id="Choco_close"></div><div id="Choco_loading"></div><div id="Choco_container_photo"><img id="Choco_bigImage" src="" /></div><div id="Choco_container_description"><span id="Choco_container_title"></span><span id="Choco_container_via"></span></div><div id="Choco_left_arrow" class="Choco_arrows"></div><div id="Choco_right_arrow" class="Choco_arrows"></div></div>');
 			$('#Choco_left_arrow').css('background-image', 'url('+settings.leftImg+')');  
 			$('#Choco_right_arrow').css('background-image', 'url('+settings.rightImg+')');  
 			$('#Choco_close').css('background-image', 'url('+settings.closeImg+')'); 
@@ -151,7 +151,9 @@
 			$('#Choco_loading').fadeIn(settings.fadeInImageduration);
 			var imgPreloader = new Image();
 			imgPreloader.onload = function(){
+
 				$('#Choco_bigImage').attr('src',images[settings.setIndex][settings.currentImage]['adress']);
+                console.log(images[settings.setIndex][settings.currentImage]['adress']);
 				var ajustees = iWantThePerfectImageSize(imgPreloader.height,imgPreloader.width);
 				ChoColat(ajustees['hauteur'],ajustees['largeur'],resize);
 				$('#Choco_loading').stop().fadeOut(settings.fadeOutImageduration);

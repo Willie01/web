@@ -7,6 +7,7 @@ var multer = require('multer');
 var mongoose = require('mongoose');
 global.dbHandel = require('../../database/dbHandel');
 var Image= global.dbHandel.getModel('product');
+
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'public/uploadImages/')
@@ -19,16 +20,7 @@ var upload = multer({
     storage: storage
 });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    console.log("test");
 
-    res.render('../test', { title: 'Express' });
-});
-
-router.get('/test2', function(req, res, next) {
-    console.log("test2");
-});
 router.getImages = function(callback, limit) {
 
     Image.find(callback).limit(limit);
@@ -67,7 +59,7 @@ router.addImage = function(image, callback) {
 
 
 
-router.post('/test2', upload.any(), function(req, res, next) {
+router.post('/post_product', upload.any(), function(req, res, next) {
     res.send(req.files);
 
     /*req.files has the information regarding the file you are uploading...

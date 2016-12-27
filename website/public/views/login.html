@@ -69,7 +69,13 @@
                 success: function(data,status){
                     if(status == 'success'){
                         console.log(data.toString());
-                        location.href = 'home';
+                        if(data.toString()=="1"){
+                            location.href = 'home';
+                        }else{
+                            location.href = 'login';
+                        }
+
+
 
                     }
                 },

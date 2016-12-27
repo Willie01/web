@@ -3,6 +3,10 @@
  */
 module.exports = {
     user:{
+        _id: {
+            type: Object,
+            required: false
+        },
         uname:{
             type:String,required:true
         },
@@ -14,6 +18,10 @@ module.exports = {
         }
     },
     product:{
+        _id: {
+            type: Object,
+            required: false
+        },
         path: {
             type: String,
             required: true,
@@ -32,12 +40,16 @@ module.exports = {
             required:true
         },
         initprice:{
-            type:String,
+            type:Number,
             required:true
         },
         currentprice:{
-            type:String,
+            type:Number,
             required:true
         },
+        pid:{
+            type:String,
+            require:true
+        }
     }
 };

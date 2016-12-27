@@ -1,0 +1,84 @@
+<!--<script type="text/javascript" charset="utf-8">-->
+<!--$(function() {-->
+<!--$('a.picture').Chocolat();-->
+<!--});-->
+<!--</script>-->
+<div >
+	<!--banner-->
+	<!--content-->
+	<div class="content">
+		<div class="container">
+			<!--products-->
+			<div class="content-mid">
+				<h3>Trending Items</h3>
+				<label class="line"></label>
+				<div ng-controller="HomeController">
+
+					<div  ng-repeat="product in products" class="col-md-3 item-grid simpleCart_shelfItem mid-popular" >
+						<div class=" mid-pop" >
+							<div class="pro-img">
+
+								<img src="{{product.path}}" class="img-responsive"  alt="">
+
+								<div class="zoom-icon " >
+									<a href="{{product.path}}" toolbar-tip class="picture"   rel="test" class="b-link-stripe b-animate-go  thickbox">
+										<i class="glyphicon glyphicon-search icon "></i>
+									</a>
+									<a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+								</div>
+							</div>
+							<div class="mid-1">
+								<div class="women">
+									<div class="women-top">
+										<span>{{product.ptype}}</span>
+										<h6><a href="views/details.html">Sed ut perspiciati</a></h6>
+									</div>
+									<div class="img item_add">
+										<a ><img src="images/ca.png" alt=""></a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="mid-2">
+									<p ><label>${{product.initprice}}</label><em class="item_price">${{product.currentprice}}</em></p>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+
+									<div class="clearfix"></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--<div ng-controller="HomeController">-->
+					<!--<ul>-->
+					<!--<li ng-repeat="product in products">{{ product.ptype | uppercase }} - {{ product.pname | lowercase }}</li>-->
+					<!--</ul>-->
+					<!--</div>-->
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+			<!--//products-->
+			<!--brand-->
+			<div class="brand">
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic1.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic2.png" class="img-responsive" alt="">
+				</div>
+				<div class="col-md-3 brand-grid">
+					<img src="images/ic3.png" class="img-responsive" alt="">
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!--//brand-->
+		</div>
+
+	</div>
+	<!--//content-->
+</div>

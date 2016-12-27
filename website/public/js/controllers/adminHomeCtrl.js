@@ -1,42 +1,39 @@
 /**
- * Created by Frice on 2016/12/17.
+ * Created by Frice on 2016/12/25.
  */
 "use strict";
-var myApp = angular.module('homeCtrl',['ngResource','ngRoute']); // Taking Angular Application in Javascript Variable
-myApp.controller('HomeController', ['$scope', '$resource',
+var adminApp = angular.module('adminHomeCtrl',['ngResource','ngRoute']); // Taking Angular Application in Javascript Variable
+adminApp.controller('AdminHomeController', ['$scope', '$resource',
     function($scope, $resource){
-        console.log("in HomeController");
+        console.log("in adminHomeController");
         var Products = $resource('/getproducts');
         Products.query(function(data){
             console.log("data："+data);
             $scope.products = data;
         });
     }]);
-myApp.controller('MenController', ['$scope', '$resource',
+adminApp.controller('AdminMenController', ['$scope', '$resource',
     function($scope, $resource){
-        console.log("in MenController");
-        var ProductsMen = $resource('/getproducts_men');
-        ProductsMen.query(function(data){
+        console.log("in AdminMenController");
+        var Products = $resource('/getproducts_men');
+        Products.query(function(data){
             $scope.productsMen = data;
         });
     }]);
-myApp.controller('WomenController', ['$scope', '$resource',
+adminApp.controller('AdminWomenController', ['$scope', '$resource',
     function($scope, $resource){
-        console.log("in WomenController");
-        var ProductsWomen = $resource('/getproducts_women');
-        ProductsWomen.query(function(data){
+        console.log("in AdminWomenController");
+        var Products = $resource('/getproducts_women');
+        Products.query(function(data){
             $scope.productsWomen = data;
         });
     }]);
-myApp.controller('SaleController', ['$scope', '$resource',
+adminApp.controller('AdminSaleController', ['$scope', '$resource',
     function($scope, $resource){
         console.log("in SaleController");
-        var Products = $resource('/getproducts_sale');
-        Products.query(function(data){
-            $scope.productsSale = data;
-        });
+
     }]);
-myApp.controller('DetailsController', ['$scope', '$resource',
+adminApp.controller('AdminDetailsController', ['$scope', '$resource',
     function($scope, $resource){
         console.log("in DetailsController");
         var Prodductinfo = $resource('/getproductinfo');
@@ -45,30 +42,8 @@ myApp.controller('DetailsController', ['$scope', '$resource',
             $scope.products = data;
         });
     }]);
-myApp.controller('CartController', ['$scope', '$resource',
-    function($scope, $resource){
-        console.log("in CartController");
-        var Prodductinfo = $resource('/getproductinfo');
-        Prodductinfo.query(function(data){
-            console.log("data："+data);
-            $scope.products = data;
-        });
-    }]);
-myApp.controller('WishlistController', ['$scope', '$resource',
-    function($scope, $resource){
-        console.log("in WishlistController");
-        var Prodductinfo = $resource('/getproductinfo');
-        Prodductinfo.query(function(data){
-            console.log("data："+data);
-            $scope.products = data;
-        });
-    }]);
-myApp.controller('ContactController', ['$scope', '$resource',
-    function($scope, $resource){
-        console.log("in ContactController");
 
-    }]);
-myApp.directive('toolbarTip', function() {
+adminApp.directive('toolbarTip', function() {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {

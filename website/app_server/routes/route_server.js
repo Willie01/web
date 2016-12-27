@@ -3,6 +3,33 @@ var router = express.Router();
 var multer = require('multer');
 global.dbHandel = require('../../database/dbHandel.js');
 var Product= global.dbHandel.getModel('product');
+router.getImages = function(callback, limit) {
+
+    Product.find(callback).limit(limit);
+}
+
+
+router.getImageById = function(id, callback) {
+
+    Product.findById(id, callback);
+
+}
+
+router.addImage = function(image, callback) {
+    Product.create(image, callback);
+}
+
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/uploadImages/')
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({
+    storage: storage
+});
 
 // router.get('/index', function(req, res, next) {
 //     // console.log("sss:"+req.session.uname);
@@ -50,70 +77,34 @@ router.get('/getproducts_sale', function(req, res) {
         res.json(mProjects);
     });
 });
+router.get('/post_product', function(req, res, next) {})
+.post('/post_product', upload.any(), function(req, res, next) {
+    res.send(req.files);
+
+    /*req.files has the information regarding the file you are uploading...
+     from the total information, i am just using the path and the imageName to store in the mongo collection(table)
+     */
+    var path = req.files[0].path;
+    var imageName = req.files[0].originalname;
+
+    var imagepath = {};
+    imagepath['path'] = path.replace("public\\","");
+    imagepath['originalname'] = imageName;
+
+    //imagepath contains two objects, path and the imageName
+
+    //we are passing two objects in the addImage method.. which is defined above..
+    router.addImage(imagepath, function(err) {
+
+    });
+
+});
+
 router.get('/getproductinfo', function(req, res, next) {
      console.log("productinfo");
     });
 
- router.get('/contact', function(req, res, next) {
-        console.log("contact");
-    });
 
-    // Product.find('', function(err, products) { // Query in MongoDB via Mongo JS Module
-    //     console.log("get in");
-    //     if( err || !products) console.log("No users found");
-    //     else
-    //     {
-    //         res.writeHead(200, {'Content-Type': 'application/json'}); // Sending data via json
-    //         str='[';
-    //         products.forEach( function(product) {
-    //             str = str + '{ "path" : "' + product.path + '",'
-    //                 +'"ptype":"' + product.ptype + '",'
-    //                 +'"pname":"' + product.pname + '",'
-    //                 +'"initprice":"' + product.initprice + '",'
-    //                 +'"currentprice":"' + product.currentprice+'"'+
-    //                 '},' +'\n';
-    //         });
-    //         str = str.trim();
-    //         str = str.substring(0,str.length-1);
-    //         str = str + ']';
-    //         res.end(str);
-    //         // Prepared the jSon Array here
-    //     }
-    // });
-
-
-/* GET register page. */
-router.route("/register").get(function(req,res){    // 到达此路径则渲染register文件，并传出title值供 register.html使用
-    res.render("register",{title:'User register'});
-}).post(function(req,res){
-    //这里的User就是从model中获取user对象，通过global.dbHandel全局方法（这个方法在app.js中已经实现)
-    var User = global.dbHandel.getModel('user');
-    var uname = req.body.uname;
-    var upwd = req.body.upwd;
-    User.findOne({name: uname},function(err,doc){   // 同理 /login 路径的处理方式
-        if(err){
-            res.send(500);
-            req.session.error =  '网络异常错误！';
-            console.log(err);
-        }else if(doc){
-            req.session.error = '用户名已存在！';
-            res.send(500);
-        }else{
-            User.create({                             // 创建一组user对象置入model
-                name: uname,
-                password: upwd
-            },function(err,doc){
-                if (err) {
-                    res.send(500);
-                    console.log(err);
-                } else {
-                    req.session.error = '用户名创建成功！';
-                    res.send(200);
-                }
-            });
-        }
-    });
-});
 /* GET home page. */
 router.get("/loginHome",function(req,res){
     if(!req.session.user){                     //到达/home路径首先判断是否已经登录

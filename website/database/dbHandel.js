@@ -2,6 +2,7 @@
  * Created by Frice on 2016/12/13.
  */
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/accounts');
 var Schema = mongoose.Schema;
 var models = require("./models");
 
